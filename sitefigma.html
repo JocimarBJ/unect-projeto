@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palavras Cafeinadas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Primeira Fonte: Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Segunda Fonte: Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsivo.css">
+    <link rel="icon" type="image/png" href="imagens/entreemcontato/logo_branca.svg">
+    <script src="uiNavigation.js" defer></script>
+</head>
+<body>
+<!--========================= Seção NavBar ===============================-->
+<header>
+        <nav class="barraNavegacao">
+                <div class="menu">
+                    <ul>
+                        <li><a href="#sobre_nos">Sobre nós</a></li>
+                        <li><a href="#secaoCarrossel">Cafeteria</a></li>
+                        <li>
+                            <div class="logo">
+                                <img src= "imagens\logo_escura.svg" alt="Logo do Site">
+                                <p>Palavras Cafeinadas</p>
+                                <div class="hamburguer_icone"><img src="imagens/hamburguer/icone_fechado.svg" alt="Ícone do menu fechado"></div>
+                            </div>
+                        </li>
+                        <li><a href="#conteudo_contato">Contato</a></li>
+                        <li class="numero"><img src="imagens/cellphone.svg" alt="Ícone de telefone">19-991256972</li>
+                    </ul>
+                </div>
+        </nav>
+</header>
+<!--============================================================================-->
+<!--========================= Seção Hero do Site ===============================-->
+    <section class="hero">
+        <div class="imagemFundo">
+            <div class="textoSobreposto">
+                <h1 class ="tituloGrande">Leia acompanhado de uma culinária de qualidade</h1>
+                <h3 class ="subtitulo">Onde a paixão por livros e o amor por café sempre tem um lugar à mesa.</h3>
+                <a href="#secaoCarrossel" class="botaoConhecer">VENHA CONHECER <img src="imagens/hero/setinha.svg" alt="Seta"> </a>
+            </div>
+        </div>
+    </section>
+<!--==============================================================================-->
+<!--================= Seção Sobre Nós (Terceira Parte) ===========================-->
+    <section id="sobre_nos">
+        <div class="conteudo_sobrenos">
+            <div class="texto">
+                <div><h1 class ="titulo_sobrenos"><span>SOBRE NÓS</span></h1></div>
+                <p class ="paragrafo1">A principal proposta da Cafeteria Palavras Cafeinadas é oferecer um espaço aconchegante, contendo um ambiente moderno e um atendimento completo, nela é possível provar refeições saborosas e ler excelentes livros.</p>
+                <p class ="paragrafo2">O sonho de Carolina era criar um espaço onde pudesse unir seu amor por culinária e a enorme paixão por literatura, venha saber mais dessa jornada:</p>
+                <a href="#conteudo_contato" class="botaoFaleConosco">FALE CONOSCO <img src="imagens/sobrenos/setinha.svg" alt="Seta"></a>
+            </div>
+            <div class="imagem_xicaras">
+                <img src="imagens/sobrenos/xicaras_circulo.jpg" alt="Descrição da imagem">
+            </div>
+        </div>
+    </section>
+<!--====================================================================================-->
+<!--========================= Seção do Carrossel do Site ===============================-->
+    <section id="secaoCarrossel">
+        <div class ="conteudo_carrossel">
+            <div class="divisor"><img src="imagens/Cafe onda.png" alt="Divisória"></div>
+            <div class="tituloCafeteria"><h4>CAFETERIA</h4></div>
+            <div class="seta esquerda" onclick="mudarSlide(-1)">&#10094;</div>
+            <div class="carrossel">
+                <div class="imagensCarrossel">
+                    <div class="conteudo_imagens" id="brigadeiro">
+                        <img src="imagens/carrossel/brigadeiro.jpg" alt="Brigadeiros">
+                        <h1 class="title">Brigadeiro de Capuccino</h1>
+                        <p class="paragrafos">O brigadeiro de capuccino é uma das guloseimas que enfeitam o balcão da doceria...</p>
+                    </div>
+                    <div class="conteudo_imagens" id="paodemel">
+                        <img src="imagens/carrossel/PaoDeMel.jpg" alt="PaoDeMel">
+                        <h1 class="title">Pão de Mel</h1>
+                        <p class="paragrafos">O pão de mel é um dos doces mais tradicionais que temos, ele é rechado com doce de leite...</p>
+                    </div>
+                    <div class="conteudo_imagens" id="bolo">
+                        <img src="imagens/carrossel/bolo.jpg" alt="Bolo de Chocolate">
+                        <h1 class="title">Bolo de Chocolate</h1>
+                        <p class="paragrafos">O bolo de chocolate é uma das sobremesas mais pedidas da Cafeteria, ele possui um recheio com...</p>
+                    </div>
+                    <div class="conteudo_imagens" id="sorvete">
+                        <img src="imagens/carrossel/sorvetedecafe.jpg" alt="Sorvete de Café">
+                        <h1 class="title">Sorvete de Café</h1>
+                        <p class="paragrafos">O sorvete em versão de café pode ser aproveitado sozinho ou com um pedacinho de bolo no fim...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="seta direita" onclick="mudarSlide(1)">&#10095;</div>
+        </div>
+    </section>
+<!--==============================================================================-->
+<!--====================== Seção Entre em Contato ================================-->
+    <section id="entreEmContato">
+        <div class="conteiner_contato">
+            <div id="conteudo_contato">
+                <div><h1 class ="titulo_EntreEmContato"><span>ENTRE EM CONTATO</span></h1></div>
+                <div class="dados">
+                    <div class="informacoes">
+                            <p class="numeroContato"><img src="imagens/entreemcontato/cellphone.svg" alt="Ícone de telefone" class="icones">19-991256972</p>
+                            <p class="emailContato"><img src="imagens/entreemcontato/email.svg" alt="Ícone do e-mail" class="icones">contato@gmail.com</p>
+                            <p class="enderecoContato"><img src="imagens/entreemcontato/localizacao.svg" alt="Ícone de localizacao" class="icones">Av. Paulista, 1324 - Bela Vista, São Paulo - SP, 01310-100</p>
+                            <img src="imagens/entreemcontato/linha.png" alt="Divisor" class="divisorContato">
+                            <p class="instagramContato"><img src="imagens/entreemcontato/instagram.svg" alt="Ícone do instagram" class="icones">@palavrascafeinadas</p>
+                            <p class="faceContato"><img src="imagens/entreemcontato/facebook.svg" alt="Ícone do facebook" class="icones">Palavras Cafeinadas</p>
+                            <div class="logoBranca"><img src="imagens/entreemcontato/logo_branca.svg" alt="Logo da Cafeteria Branca"><p>Palavras Cafeinadas</p></div>
+                    </div>
+                    <div class="inserirDados">
+                        <div class="input">
+                            <input type="text" placeholder="Digite seu nome...">
+                            <span class="Nome">Nome</span>
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="Digite seu email...">
+                            <span class="E-Mail">E-Mail</span>
+                        </div>
+                        <div class="input">
+                            <textarea id="mensagem" placeholder="Digite sua mensagem..."></textarea>
+                            <span class="Mensagem">Mensagem</span>
+                        </div>
+                        <a class="Botao_EnviarMensagem" onclick="enviarMensagem()">ENVIAR MENSAGEM <img id="setinha" src="imagens/hero/setinha.svg" alt="Seta"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--======================== Rodapé do Site =======================================-->
+    <footer>
+        <div class="left">Desenvolvido por Júnior</div>
+        <div class="right">Todos os direitos reservados &copy;</div>
+    </footer>
+<!--==============================================================================-->
+</body>
+</html>

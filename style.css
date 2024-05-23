@@ -1,0 +1,622 @@
+* {
+    margin: 0 0 0 0;                                          /* Retira a margem das laterais */
+    padding: 0;                                               /* Remove todos os preenchimentos internos dos elementos, garantindo que não haja espaço em branco indesejado dentro dos elementos. */
+    box-sizing: border-box;                             
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    padding-top: 95px;
+    background-color: #8F542E;
+}
+/*====================================== CABEÇALHO ============================================*/
+header {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;                                   /* Peso da fonte normal */
+    font-style: normal;                                 /* Estilo da fonte normal */
+    background-color: #291505;                        /* Cor de fundo do cabeçalho (neste exemplo, azul) */
+    margin: 0;
+    margin-right: 0;
+}
+
+/*------------------ Criando e estilizando a barra de navegação do inicio da tela --------------------*/
+.barraNavegacao {
+    display: flex;                                      /* Cria um layout flexível para alinhar os itens horizontalmente */
+    justify-content: space-between;                     /* Distribui os itens igualmente no espaço disponível */
+    align-items: center;                                /* Centraliza os itens verticalmente */
+    position: fixed;                                    /* Fixa a barra de navegação no topo da janela de visualização */
+    top: 0;                                             /* Posiciona a barra de navegação no topo da janela de visualização */
+    width: 100%;                                        /* Define a largura da barra de navegação para ocupar toda a largura da janela de visualização */
+    z-index: 1;                                         /* Garante que a barra de navegação fique acima de outros elementos */
+    background-color: #57290B;
+    padding-left: 7.438rem;
+    padding-right: 7.438rem;
+    height: 100px;
+}
+/*---------- Deixando a altura da barra de navegacao de acordo com o site ----------------*/
+
+.menu{
+    width: 100%;
+}
+
+.menu ul{
+    list-style-type: none;                              /* Remove os marcadores de lista padrão */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul li{
+    font-size: 18px;                                    /* Defina o tamanho da fonte desejado */
+    cursor: pointer;
+    user-select: none;
+}
+
+/*-------------Deixando o icone do telefone centralizado----------*/
+.numero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: #ffffff;                                   /* Cor do texto dentro do cabeçalho (neste exemplo, branco) */
+}
+
+.numero img {
+    margin-right: 5px;
+    margin-top: 4px;
+    height: 20px;
+    align-self: center;
+    pointer-events: none; /* Impede interações do mouse com as imagens */
+    user-select: none;
+}
+/*--------- Posicionamento dos elementos na barra de navegação e margem ------------*/
+
+.menu ul li a{
+    color: #fff;                                      /* Cor do texto dos links */
+    text-decoration: none;                              /* Remove o sublinhado padrão dos links */
+    position: relative;                                 /* Define a posição relativa para que o posicionamento do pseudo-elemento seja relativo ao link */
+}
+
+/*----------------- Adicionando pseudo-elemento (barra abaixo dos itens do menu) e estilizando -----------*/
+.menu ul li a::after{
+    content: '';                                        /* Adiciona conteúdo ao pseudo-elemento */
+    position: absolute;                                 /* Define a posição absoluta para que o pseudo-elemento possa ser posicionado em relação ao link */
+    left: 50%;                                          /* Posiciona o pseudo-elemento no início do link */
+    transform: translateX(-50%) scaleX(0);                        /* Move o pseudo-elemento para a esquerda em 50% da própria largura, o que o posiciona no centro */
+    bottom: -4px;                                       /* Alinha o pseudo-elemento com a parte inferior do link */
+    width: 60%;                                         /* Define a largura da linha de sublinhado (80% da largura do link) */
+    height: 2px;                                        /* Define a espessura da linha de sublinhado */
+    background-color: transparent;                      /* Define a cor inicial da linha de sublinhado */
+    transition: transform 0.5s;                         /* Aplica a transição apenas à transformação */
+    border-radius: 5px;
+    background-color: #B2784A;                        /* Muda a cor da linha de sublinhado ao passar o mouse sobre o link */
+}
+/*------ Reduzindo tamanho da barra para ficar menor que as palavras -------*/
+
+.menu ul li a:hover::after {
+    transform: translateX(-50%) scaleX(1);           /* Aumenta a largura para 100% quando passa o mouse */
+}
+
+.hamburguer_icone
+{
+    display: none;
+}
+
+/*-------- Modificando e colocando a logo da cafeteria ----------*/
+.logo {
+    font-weight: 100;
+    text-align: center;                                  /* Centraliza a logo */
+    font-size: 18px;                                     /* Defina o tamanho da fonte desejado */
+    color: #F0F0F0;
+    cursor: not-allowed;
+    pointer-events: none; /* Impede interações do mouse com as imagens */
+    user-select: none;
+}
+
+.logo img {
+    max-width: 40px;                                     /* Define a largura máxima da logo */
+    filter: drop-shadow(3px 1px 1px #2b1405);
+}
+
+/*=====================================================================================================================*/
+
+/*======================================== Segunda parte do Site ========================================*/
+
+/*-------- Adiciona imagem de fundo e as frases que irá ficar sobrepostas --------*/
+.imagemFundo {
+    background-image: url('imagens/hero/BackGround-Cafe-Na-Mesa.jpg');
+    background-size: cover;             /* Tamanho da imagem: Cover significa que ela deve cobrir tudo */
+    background-position: center;        /* Posição da foto no fundo */
+    height: 100vh;                      /* Altura da imagem */
+    width: 100%;
+    position: relative;                 /* Posição relativa para permitir sobreposição */
+}
+
+.textoSobreposto {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    position: absolute;                 /* Posição absoluta para sobreposição */
+    top: 10%;                           /* Alinha o texto verticalmente no centro */
+    color: #ffffff;                   /* Cor do texto */
+    display: flex;                      /* Usa flexbox para o layout */
+    flex-direction: column;             /* Define a direção dos itens como alinhados em coluna */
+    align-items: flex-start;            /* Alinha os itens no início ao longo do eixo transversal (horizontalmente no caso de uma coluna) */
+    padding-left: 7.438rem;
+    padding-right: 7.438rem;
+}
+
+.tituloGrande {
+    font-size: 50px;
+    max-width: 589px;                   /* Defina a largura máxima desejada */
+    text-align: left;                   /* Alinha o texto à esquerda */
+    margin-bottom: 16px;                /* Define a distância entre os títulos grande e pequeno */
+    letter-spacing: 1px;                /* Define o espaçamento entre as letras */
+}
+
+.subtitulo {
+    max-width: 514px;                   /* Defina a largura máxima desejada */
+    text-align: left;                   /* Alinha o texto à esquerda */
+    font-weight: 500;                   /* Peso da fonte normal */
+    font-style: normal;                 /* Estilo da fonte normal */
+    font-size: 24px;
+}
+
+/*--------- Adiciona um botão para quando clicar direcionar para outra parte do site ----------*/
+.botaoConhecer {
+    display: inline-block;            
+    padding: 15px 30px 15px 30px;                 /* Espaçamento da palavra em relação à borda */
+    font-weight: 1000;                  /* Grossura da letra */
+    background-color: #8F542E;        /* Cor de fundo do botão */
+    color: #ffffff;                   /* Cor do texto do botão */
+    text-decoration: none;              /* Remove o sublinhado padrão dos links */
+    border-radius: 5px;                 /* Borda arredondada */
+    vertical-align: top;                /* Alinha o botão com o topo das frases */
+    margin-top: 41px;                   /* Margem superior */
+    max-width: 400px;                   /* Defina a largura máxima desejada */
+    filter: drop-shadow(0px 0px 5px #de8f59, opacity 0.3); /* Inicialmente sem sombra */
+    transition: filter 0.5s ease; /* Transição suave para o filtro */
+    user-select: none;
+}
+
+.botaoConhecer:hover{
+filter: drop-shadow(0px 0px 5px #de8f59); /* Adiciona sombra ao passar o mouse */
+}
+
+/* Adiciona um espaço entre as palavras e a seta */
+.botaoConhecer img {
+    margin-left: 10px;
+}
+/*===========================================================================================*/
+
+/*=============================== SOBRE NÓS ====================================*/
+#sobre_nos {
+    background-color: #f3f3f3;      /* Cor de fundo da segunda parte */
+    padding: 130px 0;                 /* Espaçamento interno da segunda parte */
+}
+
+.conteudo_sobrenos {
+    width: 100%;
+    display: flex;                    /* Usa flexbox para o layout */
+    justify-content: space-between;   /* Distribui os elementos horizontalmente */
+    align-items: center;              /* Centraliza verticalmente os elementos */
+    padding-left: 7.438rem;
+    padding-right: 7.438rem;
+    padding-bottom: 88px;
+}
+
+.titulo_sobrenos{
+    position: relative;               /* Para permitir posicionamento absoluto do elemento ::before */
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 39px;
+    font-weight: 700px;
+    font-size: 40px;
+    line-height: 56px;
+}
+
+.titulo_sobrenos span {
+    background: linear-gradient(to bottom, transparent 50%, #FBC9A8 50%);
+    padding: 0 20px;                  /* Adiciona um pequeno espaçamento ao redor do texto grifado */
+}
+
+.paragrafo1{
+    margin-bottom: 16px;
+    max-height: 6rem;
+}
+
+.paragrafo2{
+    max-height: 4.5rem;
+}
+.paragrafo1, .paragrafo2{
+    font-family: 'Open Sans', sans-serif;
+    max-width: 36.813rem;
+    font-weight: 400px;
+    font-style: normal;  
+    font-size: 18px;
+}
+.imagem_xicaras img
+{
+    max-width: 100%;                  /* Garante que a imagem não ultrapasse o contêiner */
+    height: auto;                     /* Mantém a proporção da imagem */
+    display: block;                   /* Remove espaços extras ao redor da imagem */
+    max-width: 100%;
+    max-height: 340.41px;
+    top: 771px;
+    left: 912px;
+    border-radius: 8px;
+    margin-right: 50px;
+    box-shadow: 1px 3px 10px #2b1405;
+    pointer-events: none; /* Impede interações do mouse com as imagens */
+}
+
+.botaoFaleConosco {
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    padding: 15px 25px;
+    font-weight: 1000;
+    background-color: #8F542E;      /* Cor de fundo do botão */
+    color: #ffffff;                 /* Cor do texto do botão */
+    text-decoration: none;            /* Remove o sublinhado padrão dos links */
+    border-radius: 5px;               /* Borda arredondada */
+    vertical-align: top;              /* Alinha o botão com o topo das frases */
+    margin-top: 48px;                 /* Remove qualquer margem superior */
+    max-width: 400px;                 /* Defina a largura máxima desejada */
+    filter: drop-shadow(0px 0px 5px #000, opacity 0.3); /* Inicialmente sem sombra */
+    transition: filter 0.5s ease; /* Transição suave para o filtro */
+    user-select: none;
+}
+
+.botaoFaleConosco:hover{
+    filter: drop-shadow(0px 0px 5px #000); /* Adiciona sombra ao passar o mouse */
+}
+
+.botaoFaleConosco img {margin-left: 10px;}
+
+/*================================================================================*/
+
+/*=============================== CARROSSEL CAFETERIA ====================================*/
+
+.conteudo_carrossel{
+    display: flex;
+    background-color: #80451F;                  /* Cor de fundo */    
+    width: 100%;
+    position: relative;
+    padding-left: 7.438rem;
+    padding-right: 7.438rem;
+    height: 760px;
+    justify-content: center;
+}
+
+.divisor {
+    display: block;
+    position: absolute;                            /* Define a posição absoluta para a imagem de divisória */
+    left: 0%;
+    width: 100%;
+    filter: drop-shadow(3px 3px 3px #2b1405);
+}
+
+.divisor img{
+    width: 100%;
+    transform: translateY(-50%) translateX(0%);    /* Centraliza verticalmente o divisor */
+    padding-bottom: 64.92px;
+}
+
+.tituloCafeteria{
+    font-family: 'Cormorant Garamond', serif;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    justify-self: center;
+    margin-top: 11%;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    filter: drop-shadow(3px 1px 3px #2b1405);
+}
+
+.tituloCafeteria::after{
+    content: '';
+    position: absolute;
+    left: 50%;                                          /* Posiciona o pseudo-elemento no início do link */
+    transform: translateX(-50%);                        /* Move o pseudo-elemento para a esquerda em 50% da própria largura, o que o posiciona no centro */
+    bottom: -4px;                                       /* Alinha o pseudo-elemento com a parte inferior do link */
+    width: 80%;                                         /* Define a largura da linha de sublinhado (80% da largura do link) */
+    height: 3px;                                        /* Define a espessura da linha de sublinhado */
+    background-color: transparent;                      /* Define a cor inicial da linha de sublinhado */
+    transition: width 0.5s, background-color 0.5s;      /* Adiciona uma transição suave à mudança da largura e da cor da linha de sublinhado */
+    border-radius: 5px;
+    background-color: #B2784A;
+
+}
+
+.carrossel{
+    width: 71vw;
+    display: flex;
+    position: absolute;                                /* Define a posição relativa para o carrossel */
+    align-items: center;
+    overflow: hidden;
+    margin-top: 15%;
+}
+
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 36px;
+    cursor: pointer;
+    color: #F5F3ED;
+    font-weight: lighter;
+    transform: scaleY(1.5) scaleX(1.2);
+}
+
+.esquerda {
+    left: 5rem;
+}
+
+.direita {
+    right: 5rem;
+}
+
+.imagensCarrossel
+{
+    display: flex;
+    gap: 24px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+.imagensCarrossel img
+{
+    height: 270px;
+}
+.conteudo_imagens
+{
+    background-color: #ffffff;
+    padding: 16px 16px 30px 16px;
+    border-radius: 8px;
+    line-height: 18px;
+    filter: drop-shadow(3px 3px 3px #2b1405);
+}
+
+.title
+{
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.paragrafos{
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2%;
+}
+
+/*==========================================================================================*/
+
+/*================================= SEÇÃO ENTRE EM CONTATO =================================*/
+.conteiner_contato{
+    display: flex;
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+    padding-left: 7.438rem;
+    padding-right: 7.438rem;
+}
+#conteudo_contato{
+    display: flex;
+    width: 1200px;
+    margin-top: 128px;
+    margin-bottom: 128px;
+    position: relative;
+    background-color: transparent;
+    flex-direction: column;
+}
+.dados{
+    display: flex;
+    width: 100%;
+    box-shadow: 1px 1px 50px #bfb3ab;
+    background-color: none;
+    border-radius: 15px;
+    height: 711px;
+}
+
+/*--------------- Customização do titulo Entre em Contato ---------------*/
+.titulo_EntreEmContato{
+    position: relative;                 /* Para permitir posicionamento absoluto do elemento ::before */
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 39px;
+    font-weight: 700px;
+    font-size: 40px;
+    line-height: 56px;
+}
+
+.titulo_EntreEmContato span {
+    background: linear-gradient(to bottom, transparent 50%, #FBC9A8 50%);
+    padding: 0 20px;                    /* Adiciona um pequeno espaçamento ao redor do texto grifado */
+}
+
+/*-------------- Customização do conteiner de informações -----------------*/
+.informacoes{
+    display: flex;
+    background-color: #8F542E;
+    flex-direction: column;              /* Define a direção dos itens como alinhados em coluna */
+    flex: 1.3;
+    border-radius: 8px 0px 0px 8px;
+    padding: 43px 30px 0px 30px;         /*Cima, direita, baixo, esquerda*/
+    color: #ffffff;
+}
+.numeroContato, .emailContato, .enderecoContato, .instagramContato, .faceContato{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+.enderecoContato{width: 224px; margin-bottom: 0px;}
+
+.enderecoContato .icones{margin-right: 12px;}
+
+.instagramContato{margin-top: 0px;}
+
+.icones{
+    height: 27px;
+    margin-right: 6px;
+    cursor: pointer;
+    filter: drop-shadow(3px 1px 1px #2b1405);
+
+}
+
+.divisorContato{margin: 25px 0px 25px 0px; width: 100%;}
+
+.logoBranca{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Cormorant Garamond', serif;
+    color: #F0F0F0;
+    line-height: 38px;
+    height: 162px;
+    margin-top: 115px; 
+    cursor: not-allowed;
+    filter: drop-shadow(3px 1px 1px #2b1405);
+    pointer-events: none; /* Impede interações do mouse com as imagens */
+    user-select: none;
+}
+.logoBranca img{
+    filter: drop-shadow(3px 1px 1px #2b1405);
+}
+/*-------------------- Customização do conteiner de placeholders -------------------*/
+.inserirDados{
+        display: flex;
+        background-color: #F5F3ED;
+        flex-direction: column;             /* Define a direção dos itens como alinhados em coluna */
+        flex: 1.7;
+        border-radius: 0px 8px 8px 0px;
+        padding: 43px 40px 142px 40px;      /*Cima, direita, baixo, esquerda*/
+}
+.input {position: relative; padding: 0px;}
+
+.input input{
+    font-weight: 500;
+    font-size: 16px;
+    color: #6c757d;
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 1rem;
+    border: 2px solid  #8F542E;
+    outline:none;
+    background-color: #F5F3ED;
+    margin-bottom: 66px;
+}
+.input span.Nome, span.E-Mail {margin: 13px 0px;}
+
+.input span{
+    position: absolute;
+    padding: 0 4px;
+    font-family: "Open Sans", sans-serif;
+    color:  #8F542E;
+    display: flex;
+    font-size: 24px;
+    top: 0;
+    left: 17px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
+    font-weight: 700;
+}
+
+.input input:valid + span, .input input:focus + span {transform: scale(0.9) translateY(-30px); background: #F5F3ED;}
+
+.input input:focus, .input textarea:focus {
+    transition: ease 0.5s;
+    color: #8F542E;
+    border: 2px solid #352920;
+    filter: drop-shadow(3px 1px 3px #2b1405);
+}
+
+.input span.Mensagem {transform: translateY(-50%); background: #F5F3ED;}
+
+.input textarea {
+    font-weight: 500;
+    font-size: 16px;
+    color: #495055;
+    width: 100%;
+    min-height: 254px; /* Definindo uma altura mínima */
+    padding: 15px;
+    border-radius: 1rem;
+    border: 2px solid  #8F542E;
+    outline:none;
+    background-color: #F5F3ED;
+    position: relative;
+    resize: none; /* Impede o redimensionamento do textarea */
+    font-family: "Open Sans", sans-serif;
+}
+
+.input textarea:focus::placeholder {color: #8F542E;}
+
+.input textarea::placeholder {color: #6c757d;}
+
+#mensagem {color: #8F542E;}
+
+.Botao_EnviarMensagem {
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    padding: 12px 26px 12px 26px;
+    font-weight: 1000;
+    background-color: #8F542E;      /* Cor de fundo do botão */
+    color: #ffffff;                 /* Cor do texto do botão */
+    text-decoration: none;            /* Remove o sublinhado padrão dos links */
+    border-radius: 8px;               /* Borda arredondada */
+    margin-top: 42px;
+    margin-bottom: 40px; 
+    max-width: fit-content;
+    height: fit-content;                
+    gap: 20px;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 5px #000000, opacity 0.3); /* Inicialmente sem sombra */
+    transition: filter 0.5s ease; /* Transição suave para o filtro */
+    user-select: none; /* Impede a seleção de texto */
+}
+
+.Botao_EnviarMensagem:hover{
+    filter: drop-shadow(0px 0px 5px #000000); /* Adiciona sombra ao passar o mouse */
+}
+.Botao_EnviarMensagem img {
+    margin-left: 10px;
+}
+/*====================================== RODAPÉ DO SITE =====================================*/
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    background-color: #57290B  ;      /* Cor de fundo do rodapé */
+    color: #FFDAB8;                   /* Cor do texto do rodapé */
+    padding: 15px;                      /* Espaçamento interno do rodapé */
+    display: flex;                      /* Cria um layout flexível */
+    justify-content: space-between;     /* Distribui os itens horizontalmente */
+    align-items: center;                /* Centraliza os itens verticalmente */
+    position: absolute;                 /* Define o rodapé como fixo na parte inferior da tela */
+    width: 100%;                        /* Largura total */
+    bottom: 1;                          /* Posiciona o rodapé no final da página */
+    height: 75px;
+}
+
+.left {
+    text-align: left;                   /* Alinha o texto à esquerda */
+    margin-left: 7.438rem;                 /* Adiciona um espaço entre o texto e a imagem */
+}
+
+.right {
+    text-align: right;                  /* Alinha o texto à direita */
+    margin-right: 7.438rem;
+}
+
+/*===========================================================================================*/
